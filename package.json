@@ -4,6 +4,8 @@
   "description": "Notepad app in html using Redux",
   "main": "build/index.js",
   "scripts": {
+    "start": "pm2 start ecosystem.config.json",
+    "stop": "pm2 delete ecosystem.config.json",
     "test": "jest",
     "build": "npm run clean && tsc --build tsconfig.json",
     "clean": "shx rm -rf ./build"
@@ -22,7 +24,9 @@
   },
   "homepage": "https://github.com/AleksandarBayrev/notepad#readme",
   "devDependencies": {
+    "http-server": "^0.12.3",
     "jest-cli": "^27.0.6",
+    "pm2": "^5.1.0",
     "shx": "^0.3.3",
     "ts-jest": "^27.0.4",
     "typescript": "^4.3.5"
