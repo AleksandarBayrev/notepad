@@ -1,0 +1,22 @@
+{
+  "name": "notepad",
+  "version": "1.0.0",
+  "description": "Notepad app in html using Redux",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksandarBayrev/notepad.git"
+  },
+  "keywords": [
+    "notepad"
+  ],
+  "author": "Aleksandar Bayrev <aleksandarbayrev@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/AleksandarBayrev/notepad/issues"
+  },
+  "homepage": "https://github.com/AleksandarBayrev/notepad#readme"
+}
