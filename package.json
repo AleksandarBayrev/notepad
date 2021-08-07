@@ -4,7 +4,9 @@
   "description": "Notepad app in html using Redux",
   "main": "build/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "npm run clean && tsc --build tsconfig.json",
+    "clean": "shx rm -rf ./build"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/AleksandarBayrev/notepad/issues"
   },
-  "homepage": "https://github.com/AleksandarBayrev/notepad#readme"
+  "homepage": "https://github.com/AleksandarBayrev/notepad#readme",
+  "devDependencies": {
+    "jest-cli": "^27.0.6",
+    "shx": "^0.3.3",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  }
 }
