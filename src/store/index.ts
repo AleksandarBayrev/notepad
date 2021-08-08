@@ -1,5 +1,6 @@
-import { IClient } from '../types'
+import { Redux } from '../dependencies'
+import { notesReducer } from '../reducer'
+import { Note } from '../types'
 
-export const Client: IClient = {
-    add: () => console.log('add')
-}
+export type NotesStore = Redux.Store<Note[]>
+export const Store: NotesStore = Redux.createStore(notesReducer)

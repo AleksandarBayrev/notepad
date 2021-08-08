@@ -6,9 +6,11 @@
   "scripts": {
     "start": "npm run build && pm2 start ecosystem.config.js",
     "stop": "npm run clean && pm2 delete ecosystem.config.js",
+    "restart": "npm stop && npm start",
     "monitor": "pm2 monit",
     "test": "jest",
-    "build": "npm run clean && tsc --build tsconfig.json",
+    "build": "npm run clean && tsc --build tsconfig.json && npm run browserify",
+    "browserify": "browserify ./build/index.js -o ./browser/index.js && npm run clean && mv ./browser ./build",
     "clean": "shx rm -rf ./build"
   },
   "repository": {
@@ -25,11 +27,17 @@
   },
   "homepage": "https://github.com/AleksandarBayrev/notepad#readme",
   "devDependencies": {
+    "@types/uuid": "^8.3.1",
+    "browserify": "^17.0.0",
     "http-server": "^0.12.3",
     "jest-cli": "^27.0.6",
     "pm2": "^5.1.0",
+    "redux": "^4.1.1",
     "shx": "^0.3.3",
     "ts-jest": "^27.0.4",
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
   }
 }
