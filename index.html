@@ -10,26 +10,30 @@
             UI.UpdateNotes('notes-list', Store);
         });
         Store.dispatch({ type: Actions.Init });
-
-        const Tools = (() => {
-            return {
-                AddNote: (message) => {
-                    UI.AddNote(message, Store)
-                },
-                RemoveNote: (id) => {
-                    UI.RemoveNote(id, Store)
-                }
-            }
-        })()
     </script>
 </head>
 
 <body>
     <input type="text" id="noteOrId" placeholder="Add note" />
-    <button onclick="Tools.AddNote(document.getElementById('noteOrId').value)">Add Note</button>
-    <button onclick="Tools.RemoveNote(document.getElementById('noteOrId').value)">Remove Note</button>
+    <button onclick="Tools.AddNote()">Add Note</button>
+    <button onclick="Tools.RemoveNote()">Remove Note</button>
 
     <div id="notes-list"></div>
+
+    <script>
+        const Tools = (() => {
+            const element = document.getElementById('noteOrId')
+            return {
+                AddNote: () => {
+                    UI.AddNote(element.value, Store)
+                },
+                RemoveNote: () => {
+                    UI.RemoveNote(element.value, Store)
+                }
+            }
+        })()
+        window.Tools = Tools
+    </script>
 </body>
 
 </html>
